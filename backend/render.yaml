@@ -3,7 +3,7 @@ services:
     name: courts-api
     runtime: node
     plan: free
-    buildCommand: npm --prefix backend install && npm --prefix frontend install && npm --prefix frontend run build
+    buildCommand: npm --prefix backend install && npm --prefix frontend install --include=dev && npm --prefix frontend run build
     startCommand: npm --prefix backend start
     envVars:
       - key: NODE_ENV
@@ -15,4 +15,4 @@ services:
       - key: UPLOAD_DIR
         value: /tmp/uploads
       - key: CORS_ORIGIN
-        sync: false  # Set to the deployed service URL
+        value: https://courts-api-aowc.onrender.com
