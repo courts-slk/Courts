@@ -1,0 +1,368 @@
+.page { }
+
+.header { margin-bottom: 22px; }
+.h1 { font-family: 'Archivo Black', sans-serif; font-size: 22px; letter-spacing: -0.3px; color: var(--text-primary); }
+.subtitle { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+
+.loading { padding: 60px; text-align: center; color: var(--text-muted); }
+
+/* ── Flow steps ───────────────────────────────────── */
+.flowRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-bottom: 22px;
+}
+
+.flowStep {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 13px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.flowStep svg { width: 13px; height: 13px; }
+
+.stepDone {
+  background: var(--g-800);
+  border-color: var(--g-800);
+  color: var(--b-100);
+}
+
+.stepActive {
+  background: var(--accent-glow);
+  border-color: var(--border-strong);
+  color: var(--accent);
+}
+
+.arrow { color: var(--text-muted); font-size: 14px; }
+
+/* ── Two-column layout ────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 18px;
+  align-items: start;
+}
+
+/* ── Cards ────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-card);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cardTitle { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+.hint { font-size: 11px; color: var(--text-muted); }
+
+/* ── Calendar ─────────────────────────────────────── */
+.calNav { display: flex; align-items: center; gap: 8px; }
+
+.navBtn {
+  padding: 5px 9px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.14s;
+}
+
+.navBtn:hover { background: var(--surface-3); color: var(--text-primary); }
+
+.monthLabel { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+
+.calGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.calDayLabel {
+  text-align: center;
+  font-size: 9px;
+  color: var(--text-muted);
+  padding: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calDay {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.14s;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+.calDay:hover:not(.calPast) { background: var(--surface-2); color: var(--text-primary); }
+.calPast   { opacity: 0.28; cursor: not-allowed; pointer-events: none; }
+.calToday  { border-color: var(--border-strong); color: var(--accent); font-weight: 500; }
+.calSelected { background: var(--g-800); color: var(--b-100); border-color: var(--g-800); }
+
+/* ── Duration stepper ─────────────────────────────── */
+.stepper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.stepBtn {
+  width: 44px;
+  height: 44px;
+  background: var(--surface-2);
+  border: none;
+  color: var(--text-primary);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.14s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepBtn:hover:not(:disabled) { background: var(--surface-3); }
+.stepBtn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.stepDisplay {
+  flex: 1;
+  text-align: center;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 10px;
+}
+
+.stepVal {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.stepUnit {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+.stepSummary {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ── Time slots ───────────────────────────────────── */
+.timeSlotsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.slot {
+  padding: 8px 5px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.14s;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+.slot:hover:not(.slotTaken) { border-color: var(--border-strong); color: var(--text-primary); }
+.slotTaken  { opacity: 0.35; cursor: not-allowed; pointer-events: none; text-decoration: line-through; }
+.slotStart  { background: var(--g-800); border-color: var(--g-800); color: var(--b-100); font-weight: 500; }
+.slotEnd    { background: var(--g-600); border-color: var(--g-600); color: var(--b-100); font-weight: 500; }
+.slotRange  { background: var(--accent-glow); border-color: var(--border-strong); color: var(--accent); }
+
+.legend {
+  display: flex;
+  gap: 14px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.legend span { display: flex; align-items: center; gap: 5px; }
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* ── Summary sidebar ──────────────────────────────── */
+.summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  position: sticky;
+  top: calc(var(--topbar-height) + 20px);
+  box-shadow: var(--shadow-card);
+}
+
+.summaryHeader { margin-bottom: 14px; }
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.summaryRow:last-of-type { border-bottom: none; }
+.summaryLabel { color: var(--text-muted); }
+.summaryVal   { color: var(--text-primary); font-weight: 500; }
+.summaryPrice { font-family: 'DM Mono', monospace; color: var(--accent); font-weight: 600; }
+
+.sectionLabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin: 14px 0 8px;
+  display: block;
+}
+
+/* ── Payment options ──────────────────────────────── */
+.payOpts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.payOpt {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 10px;
+  cursor: pointer;
+  transition: all 0.14s;
+  text-align: center;
+}
+
+.payOpt:hover { border-color: var(--border-strong); }
+.payOptSelected { border-color: var(--g-600); background: var(--accent-glow); }
+
+.payIcon  { font-size: 16px; margin-bottom: 3px; }
+.payLabel { font-size: 11px; color: var(--text-secondary); }
+.payOptSelected .payLabel { color: var(--accent); }
+
+/* ── Deposit notice ───────────────────────────────── */
+.depositNotice {
+  background: var(--accent-glow);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 11px;
+  color: var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.depositNotice svg { width: 13px; height: 13px; flex-shrink: 0; margin-top: 1px; }
+
+.depositBreak {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: var(--text-muted);
+}
+
+.timerBar {
+  background: var(--surface-2);
+  border-radius: 7px;
+  padding: 9px 11px;
+  margin-bottom: 14px;
+  font-size: 11px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timerVal { font-family: 'DM Mono', monospace; color: var(--warning); font-weight: 600; font-size: 13px; }
+.timerExpired { color: var(--danger); }
+
+.confirmBtn {
+  width: 100%;
+  padding: 13px;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+  border-radius: 10px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.confirmBtn:hover:not(:disabled) { background: var(--btn-primary-hover); transform: translateY(-1px); }
+.confirmBtn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.cancelPolicy {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ── Shared ───────────────────────────────────────── */
+.mono { font-family: 'DM Mono', monospace; }
+.accentMono { font-family: 'DM Mono', monospace; color: var(--accent); font-weight: 600; }
+.mutedMono  { font-family: 'DM Mono', monospace; color: var(--text-secondary); }
+
+/* ── Mobile ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .summary { position: static; }
+  .timeSlotsGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .flowRow { display: none; } /* hide flow steps on tiny screens */
+  .timeSlotsGrid { grid-template-columns: repeat(4, 1fr); }
+}

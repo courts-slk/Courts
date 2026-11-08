@@ -1,0 +1,35 @@
+.page { }
+.header { margin-bottom: 22px; }
+.h1 { font-family: 'Archivo Black', sans-serif; font-size: 22px; letter-spacing: -0.3px; color: var(--text-primary); }
+.subtitle { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+.empty { padding: 32px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+.filterRow { display: flex; gap: 7px; margin-bottom: 18px; flex-wrap: wrap; }
+.chip { padding: 6px 13px; border-radius: 20px; border: 1px solid var(--border); background: var(--surface); font-size: 12px; color: var(--text-secondary); cursor: pointer; transition: all 0.14s; font-family: 'DM Sans', sans-serif; }
+.chip:hover { border-color: var(--border-strong); color: var(--text-primary); }
+.chipActive { background: var(--g-800); border-color: var(--g-800); color: var(--b-100); }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 0 20px; box-shadow: var(--shadow-card); }
+
+.item { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; padding: 13px 0; border-bottom: 1px solid var(--border); }
+.item:last-child { border-bottom: none; }
+
+.itemIcon { width: 38px; height: 38px; border-radius: 9px; background: var(--accent-glow); border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; color: var(--accent); }
+.itemIcon svg { width: 16px; height: 16px; }
+
+.courtName { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+.itemTime { font-size: 11px; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+
+.itemActions { display: flex; flex-direction: column; align-items: flex-end; gap: 7px; }
+
+.cancelBtn { padding: 4px 10px; border-radius: 7px; font-size: 11px; font-weight: 500; cursor: pointer; background: transparent; border: 1.5px solid rgba(214,79,79,0.4); color: var(--danger); font-family: 'DM Sans', sans-serif; transition: all 0.14s; }
+.cancelBtn:hover:not(:disabled) { background: rgba(214,79,79,0.08); }
+.cancelBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.rateBtn { padding: 4px 10px; border-radius: 7px; font-size: 11px; font-weight: 500; cursor: pointer; background: var(--btn-beige-bg); color: var(--btn-beige-text); border: 1px solid var(--btn-beige-border); font-family: 'DM Sans', sans-serif; transition: all 0.14s; }
+.rateBtn:hover { background: var(--btn-beige-hover); }
+
+@media (max-width: 600px) {
+  .item { grid-template-columns: 38px 1fr; gap: 10px; }
+  .itemActions { grid-column: 2; flex-direction: row; align-items: center; justify-content: flex-start; }
+}

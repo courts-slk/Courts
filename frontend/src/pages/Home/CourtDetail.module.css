@@ -1,0 +1,108 @@
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--border-light);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.prevBtn, .nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-xl);
+  cursor: pointer;
+  z-index: 10;
+  border-radius: var(--radius-md);
+  &:hover { background: rgba(0, 0, 0, 0.7); }
+}
+
+.prevBtn { left: var(--space-4); }
+.nextBtn { right: var(--space-4); }
+
+.imageIndicators {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-2);
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background var(--transition);
+  &.active { background: white; }
+}
+
+.content {
+  padding: var(--space-6) var(--space-4) var(--space-8);
+}
+
+.content h1 {
+  margin: 0 0 var(--space-3) 0;
+  font-size: var(--font-3xl);
+  color: var(--primary);
+}
+
+.description {
+  margin: 0 0 var(--space-6) 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: var(--space-6);
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detailItem p {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: var(--font-md);
+}
+
+.price {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: var(--font-lg);
+}

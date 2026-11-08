@@ -1,0 +1,167 @@
+/* =====================================================
+   DESIGN TOKENS — Courts v2
+   Extracted from Courts logo palette
+   ===================================================== */
+
+:root {
+  /* Brand greens */
+  --g-900: #0d2211;
+  --g-800: #1a3d22;
+  --g-700: #1f5229;
+  --g-600: #246830;
+  --g-500: #2d7d3a;
+  --g-400: #3a9449;
+  --g-300: #5ab569;
+  --g-200: #8dd49a;
+  --g-100: #c2edca;
+  --g-50:  #eafaee;
+
+  /* Brand beige — from logo lettering */
+  --b-900: #3a3420;
+  --b-800: #5a5030;
+  --b-700: #7a6e42;
+  --b-600: #9a8c58;
+  --b-500: #b8a870;
+  --b-400: #c9b988;
+  --b-300: #d4c99a;
+  --b-200: #ddd5b0;
+  --b-100: #e8e0c4;
+  --b-50:  #f5f0e0;
+
+  /* Semantic */
+  --danger:  #d64f4f;
+  --warning: #c98a20;
+  --info:    #3a80c4;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Font sizes */
+  --font-xs: 11px;
+  --font-sm: 13px;
+  --font-base: 15px;
+  --font-md: 16px;
+  --font-lg: 18px;
+  --font-xl: 20px;
+
+  /* Layout */
+  --sidebar-width: 218px;
+  --topbar-height: 54px;
+
+  /* Legacy compat (auth pages still use these) */
+  --primary: #1a3d22;
+  --primary-dark: #0d2211;
+  --primary-light: #246830;
+  --nav-height: 60px;
+  --bottom-bar-height: 0px;
+}
+
+/* =====================================================
+   LIGHT MODE
+   ===================================================== */
+[data-theme="light"] {
+  --bg:            #f5f0e0;
+  --surface:       #ffffff;
+  --surface-2:     #f8f5ec;
+  --surface-3:     #ede8d8;
+  --border:        rgba(36,104,48,0.14);
+  --border-strong: rgba(36,104,48,0.32);
+  --text-primary:  #1a3d22;
+  --text-secondary:#3a5c40;
+  --text-muted:    #7a9c80;
+
+  --btn-primary-bg:    #1a3d22;
+  --btn-primary-text:  #e8e0c4;
+  --btn-primary-hover: #246830;
+
+  --btn-beige-bg:    #e8e0c4;
+  --btn-beige-text:  #1a3d22;
+  --btn-beige-border:#d4c99a;
+  --btn-beige-hover: #ddd5b0;
+
+  --nav-bg:        #1a3d22;
+  --nav-text:      #a8c8ae;
+  --nav-active:    #e8e0c4;
+  --nav-active-bg: rgba(232,224,196,0.12);
+  --nav-border:    rgba(232,224,196,0.12);
+  --nav-logo:      #e8e0c4;
+  --nav-muted:     rgba(168,200,174,0.6);
+
+  --pill-green-bg:   rgba(58,148,73,0.12);
+  --pill-green-text: #246830;
+  --pill-yellow-bg:  rgba(201,138,32,0.12);
+  --pill-yellow-text:#8a5c00;
+  --pill-red-bg:     rgba(214,79,79,0.12);
+  --pill-red-text:   #a33030;
+  --pill-blue-bg:    rgba(58,128,196,0.12);
+  --pill-blue-text:  #1a5a9a;
+  --pill-gray-bg:    rgba(26,61,34,0.07);
+  --pill-gray-text:  #5a7a60;
+
+  --accent:        #246830;
+  --accent-light:  #3a9449;
+  --accent-glow:   rgba(36,104,48,0.10);
+  --stat-bar:      #246830;
+  --shadow-card:   0 1px 3px rgba(26,61,34,0.08), 0 1px 2px rgba(26,61,34,0.04);
+  --toast-bg:      #1a3d22;
+  --toast-text:    #e8e0c4;
+}
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+[data-theme="dark"] {
+  --bg:            #0d1a10;
+  --surface:       #162119;
+  --surface-2:     #1c2e20;
+  --surface-3:     #243527;
+  --border:        rgba(90,181,105,0.14);
+  --border-strong: rgba(90,181,105,0.30);
+  --text-primary:  #e8e0c4;
+  --text-secondary:#9db39f;
+  --text-muted:    #5a7a5d;
+
+  --btn-primary-bg:    #e8e0c4;
+  --btn-primary-text:  #1a3d22;
+  --btn-primary-hover: #f5f0e0;
+
+  --btn-beige-bg:    #1a3d22;
+  --btn-beige-text:  #e8e0c4;
+  --btn-beige-border:rgba(232,224,196,0.25);
+  --btn-beige-hover: #1f5229;
+
+  --nav-bg:        #0d1a10;
+  --nav-text:      #7a9a80;
+  --nav-active:    #e8e0c4;
+  --nav-active-bg: rgba(232,224,196,0.08);
+  --nav-border:    rgba(90,181,105,0.12);
+  --nav-logo:      #e8e0c4;
+  --nav-muted:     rgba(122,154,128,0.6);
+
+  --pill-green-bg:   rgba(58,148,73,0.18);
+  --pill-green-text: #5ab569;
+  --pill-yellow-bg:  rgba(201,138,32,0.18);
+  --pill-yellow-text:#e0a830;
+  --pill-red-bg:     rgba(214,79,79,0.18);
+  --pill-red-text:   #e06060;
+  --pill-blue-bg:    rgba(58,128,196,0.18);
+  --pill-blue-text:  #60a0e0;
+  --pill-gray-bg:    rgba(90,181,105,0.08);
+  --pill-gray-text:  #5a7a5d;
+
+  --accent:        #3a9449;
+  --accent-light:  #5ab569;
+  --accent-glow:   rgba(58,148,73,0.15);
+  --stat-bar:      #3a9449;
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.3);
+  --toast-bg:      #e8e0c4;
+  --toast-text:    #1a3d22;
+}

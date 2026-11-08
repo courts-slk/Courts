@@ -1,0 +1,320 @@
+/* ── Full-screen gradient background ─────────────────────────────────────── */
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  position: relative;
+  overflow: hidden;
+
+  /* Rich layered gradient */
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(46, 125, 82, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 10%, rgba(29, 94, 58, 0.4)  0%, transparent 55%),
+    radial-gradient(ellipse at 50% 50%, rgba(22, 74, 45, 0.15) 0%, transparent 70%),
+    linear-gradient(145deg, #1a5435 0%, #1D5E3A 35%, #164a2d 65%, #0f3520 100%);
+}
+
+/* Diamond lattice mesh — matches the Courts logo net texture */
+.mesh {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Cpath d='M11 1 L21 11 L11 21 L1 11 Z' fill='none' stroke='rgba(245%2C240%2C232%2C0.07)' stroke-width='0.8'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+}
+
+/* ── Glassmorphism card ───────────────────────────────────────────────────── */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 44px 40px 36px;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 32px 64px rgba(0, 0, 0, 0.30),
+    0 8px 24px rgba(0, 0, 0, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* ── Logo ─────────────────────────────────────────────────────────────────── */
+.logoWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.logoImg {
+  width: 130px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter:
+    drop-shadow(0 0 18px rgba(200, 184, 112, 0.25))
+    drop-shadow(0 6px 16px rgba(0, 0, 0, 0.45));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logoImg:hover {
+  transform: scale(1.04);
+  filter:
+    drop-shadow(0 0 24px rgba(200, 184, 112, 0.40))
+    drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* ── Headings ─────────────────────────────────────────────────────────────── */
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #F5F0E8;
+  margin: 0 0 6px;
+  line-height: 1;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: var(--font-sm);
+  color: rgba(245, 240, 232, 0.60);
+  margin: 0 0 32px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Form ─────────────────────────────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: rgba(245, 240, 232, 0.80);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 10px;
+  font-size: var(--font-md);
+  font-family: inherit;
+  line-height: 1.4;
+  color: #F5F0E8;
+  caret-color: #F5F0E8;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.input::placeholder {
+  color: rgba(245, 240, 232, 0.30);
+}
+
+.input:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(245, 240, 232, 0.50);
+  box-shadow: 0 0 0 3px rgba(245, 240, 232, 0.10);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Error ────────────────────────────────────────────────────────────────── */
+.errorMsg {
+  background: rgba(209, 69, 59, 0.20);
+  border: 1px solid rgba(209, 69, 59, 0.40);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: var(--font-sm);
+  color: #fca5a5;
+  margin: 0;
+}
+
+/* ── Submit button ────────────────────────────────────────────────────────── */
+.submitBtn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: var(--font-md);
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  margin-top: 4px;
+
+  background: #F5F0E8;
+  color: #1D5E3A;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.20);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
+}
+
+.submitBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── Divider ──────────────────────────────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 16px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.divider span {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(245, 240, 232, 0.40);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── Demo buttons ─────────────────────────────────────────────────────────── */
+.demoBtns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.demoBtn {
+  padding: 10px 8px;
+  border-radius: 8px;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+
+  background: transparent;
+  color: rgba(245, 240, 232, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.demoBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.10);
+  color: #F5F0E8;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.demoBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Register link ────────────────────────────────────────────────────────── */
+.link {
+  text-align: center;
+  font-size: var(--font-sm);
+  color: rgba(245, 240, 232, 0.50);
+  margin: 0;
+}
+
+.linkAnchor {
+  color: rgba(245, 240, 232, 0.90);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245, 240, 232, 0.30);
+  padding-bottom: 1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.linkAnchor:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.60);
+  text-decoration: none;
+}
+
+/* ── Select ───────────────────────────────────────────────────────────────── */
+select.input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(245,240,232,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+select.input option {
+  background: #164a2d;
+  color: #F5F0E8;
+}
+
+/* ── Field-level errors ───────────────────────────────────────────────────── */
+.fieldError {
+  font-size: 11px;
+  color: #fca5a5;
+  margin-top: 2px;
+}
+
+/* ── Optional label tag ───────────────────────────────────────────────────── */
+.optional {
+  font-weight: 400;
+  color: rgba(245, 240, 232, 0.40);
+  text-transform: none;
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+/* ── Mobile ───────────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .card {
+    padding: 36px 24px 28px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .logoImg {
+    width: 100px;
+    height: auto;
+  }
+}

@@ -1,0 +1,28 @@
+.shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+  transition: background 0.25s;
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 26px;
+}
+
+/* ── Mobile ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .main {
+    padding: 16px;
+    padding-bottom: 80px; /* space for mobile nav */
+  }
+}

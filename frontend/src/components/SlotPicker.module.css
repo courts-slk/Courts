@@ -1,0 +1,88 @@
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.dateSelect, .slotsSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.dateSelect label, .slotsSection label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dateButtons {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+}
+
+.dateBtn {
+  flex: 0 0 auto;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--transition);
+  &:hover { border-color: var(--primary); }
+  &.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+}
+
+.slotsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: var(--space-2);
+}
+
+.slot {
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover:not(:disabled) {
+    border-color: var(--primary);
+    background: rgba(29, 94, 58, 0.05);
+  }
+
+  &.selected {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  &.unavailable {
+    background: var(--border-light);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.loading, .noSlots {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: var(--space-4);
+}

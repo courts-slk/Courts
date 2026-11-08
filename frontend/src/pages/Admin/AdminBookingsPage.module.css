@@ -1,0 +1,18 @@
+.page { }
+.header { margin-bottom: 22px; }
+.h1 { font-family: 'Archivo Black', sans-serif; font-size: 22px; letter-spacing: -0.3px; color: var(--text-primary); }
+.subtitle { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+.filterRow { display: flex; gap: 7px; margin-bottom: 18px; flex-wrap: wrap; }
+.chip { padding: 6px 13px; border-radius: 20px; border: 1px solid var(--border); background: var(--surface); font-size: 12px; color: var(--text-secondary); cursor: pointer; transition: all 0.14s; font-family: 'DM Sans', sans-serif; }
+.chip:hover { border-color: var(--border-strong); color: var(--text-primary); }
+.chipActive { background: var(--g-800); border-color: var(--g-800); color: var(--b-100); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; box-shadow: var(--shadow-card); }
+.table { width: 100%; border-collapse: collapse; }
+.table th { text-align: left; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; padding: 9px 13px; border-bottom: 1px solid var(--border); font-weight: 400; }
+.table td { padding: 11px 13px; font-size: 12px; color: var(--text-secondary); border-bottom: 1px solid var(--border); vertical-align: middle; }
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover td { background: var(--surface-2); }
+.mono { font-family: 'DM Mono', monospace; font-size: 11px; }
+.tdName { color: var(--text-primary); font-weight: 500; }
+.tdPos { color: var(--accent); font-family: 'DM Mono', monospace; font-size: 11px; }
+.tdNeg { color: var(--danger); font-family: 'DM Mono', monospace; font-size: 11px; }

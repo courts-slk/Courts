@@ -1,0 +1,26 @@
+.page { }
+.header { margin-bottom: 22px; }
+.h1 { font-family: 'Archivo Black', sans-serif; font-size: 22px; letter-spacing: -0.3px; color: var(--text-primary); }
+.subtitle { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+.twoCol { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; box-shadow: var(--shadow-card); transition: background 0.25s; }
+
+.loyaltyRing { width: 90px; height: 90px; position: relative; margin: 0 auto 12px; }
+.ringText { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Archivo Black', sans-serif; font-size: 20px; color: var(--accent); }
+.pointsBig { font-family: 'Archivo Black', sans-serif; font-size: 38px; color: var(--g-700); margin-bottom: 3px; }
+.pointsSub { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; }
+.pointsNote { font-size: 11px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 10px; color: var(--text-secondary); }
+.redeemBtn { padding: 8px 16px; background: var(--btn-beige-bg); color: var(--btn-beige-text); border: 1px solid var(--btn-beige-border); border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; cursor: not-allowed; opacity: 0.5; }
+
+.cardHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.cardTitle { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+
+.histItem { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; padding: 13px 0; border-bottom: 1px solid var(--border); }
+.histItem:last-of-type { border-bottom: none; }
+.histIcon { width: 38px; height: 38px; border-radius: 9px; background: var(--accent-glow); border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; color: var(--accent); }
+.histIcon svg { width: 16px; height: 16px; }
+.histCourt { font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 3px; }
+.histDate { font-size: 11px; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+.histPts { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--accent); font-weight: 600; }
+
+@media (max-width: 700px) { .twoCol { grid-template-columns: 1fr; } }

@@ -1,0 +1,39 @@
+.page { }
+.header { margin-bottom: 22px; }
+.h1 { font-family: 'Archivo Black', sans-serif; font-size: 22px; letter-spacing: -0.3px; color: var(--text-primary); }
+.subtitle { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+
+.twoThirds { display: grid; grid-template-columns: 2fr 1fr; gap: 18px; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin-bottom: 18px; box-shadow: var(--shadow-card); transition: background 0.25s, border-color 0.25s; }
+
+.profileHeader { display: flex; align-items: center; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--border); margin-bottom: 18px; }
+.avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--g-800); border: 2px solid var(--b-300); display: flex; align-items: center; justify-content: center; font-family: 'Archivo Black', sans-serif; font-size: 18px; color: var(--b-100); flex-shrink: 0; }
+.profileName { font-size: 17px; font-weight: 500; margin-bottom: 2px; color: var(--text-primary); }
+.profileSub { font-size: 12px; color: var(--text-muted); }
+
+.formRow { margin-bottom: 13px; }
+.formLabel { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 5px; display: block; }
+.formInput { width: 100%; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px; color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 13px; outline: none; transition: border-color 0.14s; box-sizing: border-box; }
+.formInput:focus { border-color: var(--border-strong); }
+
+.formActions { display: flex; gap: 10px; margin-top: 14px; }
+.btnPrimary { padding: 10px 18px; background: var(--btn-primary-bg); color: var(--btn-primary-text); border: none; border-radius: 9px; font-family: 'Archivo Black', sans-serif; font-size: 13px; cursor: pointer; transition: all 0.18s; }
+.btnPrimary:hover:not(:disabled) { background: var(--btn-primary-hover); }
+.btnPrimary:disabled { opacity: 0.6; cursor: not-allowed; }
+.btnBeige { padding: 10px 18px; background: var(--btn-beige-bg); color: var(--btn-beige-text); border: 1px solid var(--btn-beige-border); border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+.btnBeige:hover { background: var(--btn-beige-hover); }
+
+.cardHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.cardTitle { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+
+.settingRow { display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--border); }
+.settingLabel { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+.settingSub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.toggle { width: 38px; height: 21px; border-radius: 11px; background: var(--g-700); cursor: pointer; position: relative; transition: background 0.2s; border: none; }
+.toggle::after { content: ''; width: 15px; height: 15px; background: var(--b-100); border-radius: 50%; position: absolute; top: 3px; right: 3px; transition: transform 0.2s; }
+.toggleOff { background: var(--surface-3); }
+.toggleOff::after { transform: translateX(-17px); }
+
+@media (max-width: 900px) { .twoThirds { grid-template-columns: 1fr; } }

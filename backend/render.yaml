@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: courts-api
+    runtime: node
+    buildCommand: npm --prefix backend install && npm --prefix frontend install && npm --prefix frontend run build
+    startCommand: npm --prefix backend start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_PATH
+        value: /data/courts.db
+      - key: UPLOAD_DIR
+        value: /data/uploads
+      - key: CORS_ORIGIN
+        sync: false  # Set to the deployed service URL
+    disk:
+      name: courts-data
+      mountPath: /data
+      sizeGB: 1

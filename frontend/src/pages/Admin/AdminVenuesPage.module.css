@@ -1,0 +1,19 @@
+.page { }
+.header { margin-bottom: 22px; }
+.h1 { font-family: 'Archivo Black', sans-serif; font-size: 22px; letter-spacing: -0.3px; color: var(--text-primary); }
+.subtitle { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; box-shadow: var(--shadow-card); }
+.cardPending { border-color: rgba(201,138,32,0.35); }
+.cardTop { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.venueName { font-size: 13px; font-weight: 500; margin-bottom: 2px; color: var(--text-primary); }
+.venueCity { font-size: 11px; color: var(--text-muted); }
+.venueMeta { font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; }
+.venueRev { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--accent); }
+.venueActions { display: flex; gap: 6px; margin-top: 12px; }
+.approveBtn { flex: 1; padding: 6px 11px; border-radius: 7px; font-size: 11px; font-weight: 500; cursor: pointer; border: 1.5px solid var(--g-800); background: var(--g-800); color: var(--b-100); font-family: 'DM Sans', sans-serif; transition: all 0.14s; }
+.approveBtn:hover { background: var(--g-600); }
+.rejectBtn { padding: 6px 11px; border-radius: 7px; font-size: 11px; font-weight: 500; cursor: pointer; border: 1.5px solid rgba(214,79,79,0.4); background: transparent; color: var(--danger); font-family: 'DM Sans', sans-serif; transition: all 0.14s; }
+.rejectBtn:hover { background: rgba(214,79,79,0.08); }
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,151 @@
+.topBar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 26px;
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow-card);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 15px;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Search ─────────────────────────────────────── */
+.search {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 210px;
+}
+
+.searchIcon {
+  width: 13px;
+  height: 13px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── Theme toggle ───────────────────────────────── */
+.themeToggle {
+  width: 64px;
+  height: 30px;
+  background: var(--surface-3);
+  border: 1px solid var(--border-strong);
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  gap: 6px;
+  transition: background 0.25s;
+  flex-shrink: 0;
+}
+
+.themeIcon {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.knob {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--btn-primary-bg);
+  top: 3px;
+  left: 3px;
+  transition: transform 0.25s cubic-bezier(.4,0,.2,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.knob svg {
+  width: 12px;
+  height: 12px;
+  color: var(--btn-primary-text);
+}
+
+.knobDark {
+  transform: translateX(34px);
+}
+
+/* ── Notifications ──────────────────────────────── */
+.notifBtn {
+  width: 32px;
+  height: 32px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  color: var(--text-secondary);
+  transition: all 0.14s;
+}
+
+.notifBtn:hover {
+  background: var(--surface-3);
+}
+
+.notifBtn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.notifDot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-light);
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border: 1.5px solid var(--surface);
+}
+
+/* ── Mobile ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .search { display: none; }
+  .topBar { padding: 0 16px; }
+}

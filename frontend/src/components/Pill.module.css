@@ -1,0 +1,28 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.green  { background: var(--pill-green-bg);  color: var(--pill-green-text);  }
+.green  .dot { background: var(--pill-green-text); }
+.yellow { background: var(--pill-yellow-bg); color: var(--pill-yellow-text); }
+.yellow .dot { background: var(--pill-yellow-text); }
+.red    { background: var(--pill-red-bg);    color: var(--pill-red-text);    }
+.red    .dot { background: var(--pill-red-text); }
+.blue   { background: var(--pill-blue-bg);   color: var(--pill-blue-text);   }
+.blue   .dot { background: var(--pill-blue-text); }
+.gray   { background: var(--pill-gray-bg);   color: var(--pill-gray-text);   }
+.gray   .dot { background: var(--pill-gray-text); }
